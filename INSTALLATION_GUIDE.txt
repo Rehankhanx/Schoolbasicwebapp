@@ -1,0 +1,872 @@
+================================================================================
+         SCHOOL MANAGEMENT SYSTEM - COMPLETE INSTALLATION GUIDE
+================================================================================
+
+                         Version: 2.0.0
+                         Author: EduManage Development Team
+                         Last Updated: 2024
+
+================================================================================
+                              TABLE OF CONTENTS
+================================================================================
+
+1. SYSTEM REQUIREMENTS
+2. DOWNLOADING AND INSTALLING XAMPP
+3. STARTING XAMPP SERVICES
+4. COPYING PROJECT FILES
+5. CREATING THE DATABASE
+6. IMPORTING DATABASE TABLES
+7. CONFIGURING THE APPLICATION
+8. ACCESSING THE SYSTEM
+9. DEFAULT LOGIN CREDENTIALS
+10. USING THE SYSTEM
+11. TROUBLESHOOTING COMMON ISSUES
+12. USB PORTABLE INSTALLATION
+13. BACKUP AND RESTORE
+14. SECURITY RECOMMENDATIONS
+15. FREQUENTLY ASKED QUESTIONS
+
+================================================================================
+                          1. SYSTEM REQUIREMENTS
+================================================================================
+
+MINIMUM REQUIREMENTS:
+- Operating System: Windows 7/8/10/11 (32-bit or 64-bit)
+- RAM: 2 GB minimum (4 GB recommended)
+- Disk Space: 1 GB free space
+- Web Browser: Chrome, Firefox, Edge (latest version)
+
+SOFTWARE REQUIRED:
+- XAMPP (includes Apache, MySQL, PHP, phpMyAdmin)
+- No other software needed - XAMPP includes everything!
+
+================================================================================
+                   2. DOWNLOADING AND INSTALLING XAMPP
+================================================================================
+
+STEP 1: Download XAMPP
+-----------------------
+1. Open your web browser
+2. Go to: https://www.apachefriends.org/download.html
+3. Click on "XAMPP for Windows" (choose the latest PHP 8.x version)
+4. Wait for the download to complete (file is about 150 MB)
+
+STEP 2: Install XAMPP
+---------------------
+1. Find the downloaded file (usually in Downloads folder)
+   - File name looks like: xampp-windows-x64-8.2.4-0-VS16-installer.exe
+
+2. Right-click on the file and select "Run as administrator"
+
+3. If you see a warning about antivirus, click "Yes" to continue
+
+4. Click "Next" on the welcome screen
+
+5. SELECT COMPONENTS - Make sure these are checked:
+   [✓] Apache
+   [✓] MySQL
+   [✓] PHP
+   [✓] phpMyAdmin
+   
+   You can uncheck others like FileZilla, Mercury, Tomcat to save space
+
+6. CHOOSE INSTALLATION FOLDER:
+   - Default: C:\xampp
+   - For USB: Select your USB drive, e.g., E:\xampp
+   
+   IMPORTANT: Use a simple path without spaces!
+
+7. Click "Next" through the remaining screens
+
+8. Click "Finish" when installation completes
+
+9. XAMPP Control Panel will open automatically
+
+================================================================================
+                        3. STARTING XAMPP SERVICES
+================================================================================
+
+STEP 1: Open XAMPP Control Panel
+--------------------------------
+- If not already open, go to: C:\xampp\xampp-control.exe
+- Right-click and "Run as administrator" (recommended)
+
+STEP 2: Start Apache
+--------------------
+1. Find "Apache" in the list
+2. Click the "Start" button next to it
+3. Wait until "Apache" background turns GREEN
+4. You should see "Running" status
+
+STEP 3: Start MySQL
+-------------------
+1. Find "MySQL" in the list
+2. Click the "Start" button next to it
+3. Wait until "MySQL" background turns GREEN
+4. You should see "Running" status
+
+STEP 4: Verify Services are Running
+-----------------------------------
+1. Open your web browser
+2. Type: http://localhost
+3. Press Enter
+4. You should see the XAMPP welcome page
+
+IF APACHE WON'T START (Port 80 Error):
+--------------------------------------
+This means another program is using port 80. Common culprits:
+- Skype
+- IIS (Internet Information Services)
+- World Wide Web Publishing Service
+
+Solution 1: Stop the conflicting program
+
+Solution 2: Change Apache port:
+1. In XAMPP Control Panel, click "Config" next to Apache
+2. Select "Apache (httpd.conf)"
+3. Find the line: Listen 80
+4. Change it to: Listen 8080
+5. Find the line: ServerName localhost:80
+6. Change it to: ServerName localhost:8080
+7. Save the file and restart Apache
+8. Now access the site at: http://localhost:8080/schoolapp
+
+IF MYSQL WON'T START (Port 3306 Error):
+---------------------------------------
+Another MySQL service might be running.
+
+Solution:
+1. Press Windows + R
+2. Type: services.msc
+3. Press Enter
+4. Find "MySQL" in the list
+5. Right-click and select "Stop"
+6. Try starting MySQL in XAMPP again
+
+================================================================================
+                        4. COPYING PROJECT FILES
+================================================================================
+
+STEP 1: Locate the htdocs Folder
+--------------------------------
+- The htdocs folder is where all website files go
+- Default location: C:\xampp\htdocs\
+- USB location: E:\xampp\htdocs\ (if installed on USB)
+
+STEP 2: Create the Project Folder
+---------------------------------
+1. Open File Explorer
+2. Navigate to: C:\xampp\htdocs\
+3. Right-click in empty space
+4. Select "New" > "Folder"
+5. Name it: schoolapp
+   
+   Full path should be: C:\xampp\htdocs\schoolapp\
+
+STEP 3: Copy All Project Files
+------------------------------
+Copy ALL the following files and folders into C:\xampp\htdocs\schoolapp\
+
+Your folder structure should look like this:
+
+C:\xampp\htdocs\schoolapp\
+│
+├── index.php                 (Home page)
+├── login.php                 (Login page)
+├── dashboard.php             (Main dashboard)
+├── logout.php                (Logout handler)
+├── profile.php               (User profile)
+├── database.sql              (Database import file)
+├── README.md                 (Documentation)
+├── INSTALLATION_GUIDE.txt    (This file)
+│
+├── config\
+│   └── db.php               (Database configuration)
+│
+├── css\
+│   └── style.css            (All styles)
+│
+├── js\
+│   └── app.js               (JavaScript functions)
+│
+├── admin\                    (Admin portal files)
+│   ├── students.php
+│   ├── teachers.php
+│   ├── classes.php
+│   ├── subjects.php
+│   ├── fees.php
+│   ├── payments.php
+│   ├── attendance.php
+│   ├── exams.php
+│   ├── results.php
+│   ├── homework.php
+│   ├── settings.php
+│   ├── reports.php
+│   ├── admission_form.php
+│   ├── fee_slip.php
+│   └── receipt.php
+│
+├── teacher\                  (Teacher portal files)
+│   ├── students.php
+│   ├── attendance.php
+│   ├── homework.php
+│   └── exams.php
+│
+├── student\                  (Student portal files)
+│   ├── attendance.php
+│   ├── homework.php
+│   ├── results.php
+│   ├── fees.php
+│   └── receipts.php
+│
+├── includes\                 (Reusable components)
+│   ├── sidebar.php
+│   └── header.php
+│
+├── uploads\                  (File uploads - will be created)
+│   ├── students\
+│   ├── teachers\
+│   ├── documents\
+│   └── general\
+│
+└── logs\                     (Error logs - will be created)
+
+STEP 4: Verify Files are Copied
+-------------------------------
+1. Open C:\xampp\htdocs\schoolapp\
+2. You should see all the files listed above
+3. Make sure database.sql file is present
+
+================================================================================
+                       5. CREATING THE DATABASE
+================================================================================
+
+STEP 1: Open phpMyAdmin
+-----------------------
+1. Make sure Apache and MySQL are running (green in XAMPP)
+2. Open your web browser
+3. Type: http://localhost/phpmyadmin
+4. Press Enter
+5. phpMyAdmin interface will open
+
+STEP 2: Understand phpMyAdmin Interface
+---------------------------------------
+- LEFT SIDEBAR: Shows all databases
+- TOP MENU: SQL, Import, Export, etc.
+- MAIN AREA: Where you work with data
+
+STEP 3: Create New Database
+---------------------------
+METHOD 1 - Using the Interface:
+1. Click "New" in the left sidebar (first option at top)
+2. In "Database name" field, type: school_db
+3. In the dropdown next to it, select: utf8mb4_general_ci
+4. Click "Create" button
+5. You'll see "school_db" appear in the left sidebar
+
+METHOD 2 - Using SQL Command:
+1. Click on the "SQL" tab at the top
+2. In the query box, type:
+   CREATE DATABASE IF NOT EXISTS school_db CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+3. Click "Go" button
+4. You'll see a success message
+
+================================================================================
+                      6. IMPORTING DATABASE TABLES
+================================================================================
+
+This is the most important step - it creates all the tables needed.
+
+STEP 1: Select the Database
+---------------------------
+1. In phpMyAdmin, click on "school_db" in the left sidebar
+2. The database will open (you'll see "No tables found")
+
+STEP 2: Go to Import
+--------------------
+1. Click the "Import" tab at the top of the page
+2. You'll see the import interface
+
+STEP 3: Choose the SQL File
+---------------------------
+1. Click "Browse..." or "Choose File" button
+2. Navigate to: C:\xampp\htdocs\schoolapp\
+3. Select the file: database.sql
+4. Click "Open"
+
+STEP 4: Configure Import Settings
+---------------------------------
+Keep these default settings:
+- Character set: utf8mb4
+- Format: SQL
+- SQL compatibility mode: NONE
+
+STEP 5: Run the Import
+----------------------
+1. Scroll down
+2. Click the "Go" button
+3. Wait for the import to complete
+4. You should see: "Import has been successfully finished"
+
+STEP 6: Verify Tables are Created
+---------------------------------
+1. Click on "school_db" in the left sidebar
+2. You should now see these tables listed:
+
+   +---------------------------+
+   | Tables in school_db       |
+   +---------------------------+
+   | activity_log              |
+   | announcements             |
+   | attendance                |
+   | classes                   |
+   | events                    |
+   | exam_schedule             |
+   | exams                     |
+   | expenses                  |
+   | fee_categories            |
+   | fee_structure             |
+   | fees                      |
+   | homework                  |
+   | homework_submissions      |
+   | hostel_allocations        |
+   | hostel_rooms              |
+   | library_books             |
+   | library_issues            |
+   | message_templates         |
+   | messages_log              |
+   | notifications             |
+   | payments                  |
+   | results                   |
+   | settings                  |
+   | students                  |
+   | subjects                  |
+   | teacher_attendance        |
+   | teachers                  |
+   | timetable                 |
+   | transport_routes          |
+   | transport_stops           |
+   | users                     |
+   +---------------------------+
+
+If you see all these tables, the import was successful!
+
+STEP 7: Verify Settings Table
+-----------------------------
+1. Click on "settings" table
+2. Click "Browse" tab
+3. You should see school settings like:
+   - school_name: EduManage School
+   - school_email: info@edumanage.school
+   - school_phone: +91 1234567890
+   etc.
+
+STEP 8: Verify Users Table
+--------------------------
+1. Click on "users" table
+2. Click "Browse" tab
+3. You should see default admin user:
+   - username: admin
+   - email: admin@school.com
+   - role: admin
+
+================================================================================
+                     7. CONFIGURING THE APPLICATION
+================================================================================
+
+STEP 1: Check Database Configuration
+------------------------------------
+1. Open the file: C:\xampp\htdocs\schoolapp\config\db.php
+2. Open it with Notepad or any text editor
+3. Verify these settings match your XAMPP setup:
+
+   define('DB_HOST', 'localhost');      // Usually 'localhost'
+   define('DB_USER', 'root');           // Default XAMPP user
+   define('DB_PASS', '');               // Default is empty (no password)
+   define('DB_NAME', 'school_db');      // Our database name
+
+4. If you have a MySQL password, enter it in DB_PASS
+
+STEP 2: Update School Settings (After Login)
+--------------------------------------------
+Once logged in as admin:
+1. Go to Settings from the sidebar
+2. Update your school information:
+   - School Name
+   - School Address
+   - Phone Number
+   - Email Address
+   - Principal Name
+   - Logo (upload)
+   - Academic Year
+   - Fee Settings
+   - Attendance Timing
+
+================================================================================
+                       8. ACCESSING THE SYSTEM
+================================================================================
+
+STEP 1: Verify XAMPP is Running
+-------------------------------
+- Apache should be GREEN
+- MySQL should be GREEN
+
+STEP 2: Open the Application
+----------------------------
+1. Open your web browser (Chrome recommended)
+2. In the address bar, type: http://localhost/schoolapp
+3. Press Enter
+
+STEP 3: You Should See
+----------------------
+- The school management system home page
+- Options to login
+- Information about the school
+- Links to different portals
+
+STEP 4: Navigate to Login
+-------------------------
+1. Click "Login" button on the home page
+   OR
+2. Go directly to: http://localhost/schoolapp/login.php
+
+================================================================================
+                     9. DEFAULT LOGIN CREDENTIALS
+================================================================================
+
++----------+------------+---------------+----------------------------------+
+| Role     | Username   | Password      | Access Level                     |
++----------+------------+---------------+----------------------------------+
+| Admin    | admin      | admin123      | Full system access               |
+| Teacher  | teacher    | teacher123    | Class & student management       |
+| Student  | student    | student123    | View only (own data)             |
++----------+------------+---------------+----------------------------------+
+
+IMPORTANT NOTES:
+- Only the Admin account exists by default
+- Create Teacher accounts through Admin > Teachers
+- Create Student accounts through Admin > Students
+- CHANGE THE DEFAULT PASSWORD immediately after first login!
+
+HOW TO LOGIN:
+1. Go to: http://localhost/schoolapp/login.php
+2. Enter Username: admin
+3. Enter Password: admin123
+4. Click "Sign In"
+5. You will be redirected to the Dashboard
+
+================================================================================
+                        10. USING THE SYSTEM
+================================================================================
+
+A. ADMIN PORTAL
+---------------
+
+After logging in as Admin, you can:
+
+1. MANAGE STUDENTS
+   - Go to: Students menu
+   - Add new students (roll number auto-generated)
+   - Edit student information
+   - View student profiles
+   - Print admission forms
+   - Delete students
+
+2. MANAGE TEACHERS
+   - Go to: Teachers menu
+   - Add new teachers (employee ID auto-generated)
+   - Assign classes to teachers
+   - Edit teacher information
+
+3. MANAGE CLASSES
+   - Go to: Classes menu
+   - Create new classes (Class 1-A, Class 2-B, etc.)
+   - Assign class teachers
+   - Set class capacity
+
+4. MANAGE SUBJECTS
+   - Go to: Subjects menu
+   - Add subjects for each class
+   - Assign teachers to subjects
+
+5. FEE MANAGEMENT
+   - Go to: Fee Management menu
+   - Create fee structure for each class
+   - Generate monthly fees for students
+   - Collect payments
+   - Print fee slips and receipts
+   - Track paid/unpaid status
+
+6. ATTENDANCE
+   - Go to: Attendance menu
+   - Select class and date
+   - Mark Present/Absent/Late
+   - View attendance reports
+
+7. EXAMS & RESULTS
+   - Go to: Exams menu to create exams
+   - Go to: Results menu to enter marks
+   - Auto grade calculation
+   - Print result cards
+
+8. SETTINGS
+   - Go to: Settings menu
+   - Update school information
+   - Upload logo
+   - Set academic year
+   - Configure fee settings
+   - Set attendance timing
+
+B. TEACHER PORTAL
+-----------------
+
+After logging in as Teacher:
+
+1. View assigned class students
+2. Mark daily attendance
+3. Assign homework
+4. Enter exam marks
+5. View timetable
+
+C. STUDENT PORTAL
+-----------------
+
+After logging in as Student:
+
+1. View attendance record
+2. Check homework assignments
+3. View exam results
+4. Check fee status
+5. Download receipts
+
+================================================================================
+                  11. TROUBLESHOOTING COMMON ISSUES
+================================================================================
+
+PROBLEM 1: "localhost refused to connect"
+-----------------------------------------
+Cause: Apache is not running
+Solution:
+1. Open XAMPP Control Panel
+2. Click "Start" next to Apache
+3. Wait for it to turn green
+4. Try again
+
+PROBLEM 2: "Database connection failed"
+---------------------------------------
+Cause: MySQL is not running or wrong credentials
+Solution:
+1. Open XAMPP Control Panel
+2. Make sure MySQL is running (green)
+3. Check config/db.php has correct settings:
+   - DB_HOST = 'localhost'
+   - DB_USER = 'root'
+   - DB_PASS = '' (empty for default XAMPP)
+   - DB_NAME = 'school_db'
+
+PROBLEM 3: "Unknown database 'school_db'"
+-----------------------------------------
+Cause: Database not created or import failed
+Solution:
+1. Go to http://localhost/phpmyadmin
+2. Create database 'school_db' if it doesn't exist
+3. Import database.sql file again
+
+PROBLEM 4: "Access denied for user 'root'@'localhost'"
+------------------------------------------------------
+Cause: MySQL password is set but not in config
+Solution:
+1. Open config/db.php
+2. Change DB_PASS to your MySQL password
+3. Save the file
+
+PROBLEM 5: Blank white page
+---------------------------
+Cause: PHP error (errors hidden)
+Solution:
+1. Open C:\xampp\php\php.ini
+2. Find: display_errors = Off
+3. Change to: display_errors = On
+4. Restart Apache
+5. Refresh page to see the error
+
+PROBLEM 6: "File too large" during import
+-----------------------------------------
+Cause: database.sql exceeds phpMyAdmin limit
+Solution:
+1. Open C:\xampp\php\php.ini
+2. Find and change these values:
+   upload_max_filesize = 64M
+   post_max_size = 64M
+   max_execution_time = 300
+3. Restart Apache
+4. Try import again
+
+PROBLEM 7: Styles not loading (page looks broken)
+-------------------------------------------------
+Cause: CSS file path issue
+Solution:
+1. Make sure css/style.css exists
+2. Clear browser cache (Ctrl + F5)
+3. Check browser console for errors (F12)
+
+PROBLEM 8: "Headers already sent" error
+---------------------------------------
+Cause: Extra whitespace or output before PHP
+Solution:
+1. Open the file mentioned in error
+2. Remove any blank lines before <?php
+3. Remove any spaces after ?>
+4. Save and try again
+
+PROBLEM 9: Login not working
+----------------------------
+Cause: Sessions not starting properly
+Solution:
+1. Clear browser cookies
+2. Clear browser cache
+3. Restart browser
+4. Try again
+
+PROBLEM 10: Port 80 is already in use
+-------------------------------------
+Cause: Another program using port 80
+Solution:
+1. Find what's using port 80:
+   - Open Command Prompt as Administrator
+   - Type: netstat -ano | findstr :80
+   - Note the PID number
+2. Open Task Manager
+3. Go to Details tab
+4. Find the process with that PID
+5. End the process
+6. Restart Apache
+
+================================================================================
+                    12. USB PORTABLE INSTALLATION
+================================================================================
+
+You can run the entire system from a USB drive!
+
+STEP 1: Install XAMPP on USB
+----------------------------
+1. Insert USB drive (minimum 4GB)
+2. Run XAMPP installer
+3. When asked for location, choose: E:\ (your USB drive)
+4. Install to: E:\xampp
+
+STEP 2: Copy Project to USB
+---------------------------
+1. Copy schoolapp folder to: E:\xampp\htdocs\schoolapp
+
+STEP 3: Run from USB on Any Computer
+------------------------------------
+1. Insert USB into any Windows computer
+2. Navigate to: E:\xampp\
+3. Run: xampp-control.exe
+4. Start Apache and MySQL
+5. Open browser: http://localhost/schoolapp
+
+ADVANTAGES:
+- No installation needed on host computer
+- Carry your school data anywhere
+- Works on any Windows PC
+- Data stays on your USB
+
+IMPORTANT FOR USB:
+- Always "Safely Remove" USB before unplugging
+- Stop Apache and MySQL before removing
+- Keep a backup copy of your USB data
+
+================================================================================
+                      13. BACKUP AND RESTORE
+================================================================================
+
+A. BACKUP DATABASE
+------------------
+
+Method 1 - Using phpMyAdmin:
+1. Go to: http://localhost/phpmyadmin
+2. Click on "school_db"
+3. Click "Export" tab
+4. Select "Quick" export method
+5. Format: SQL
+6. Click "Go"
+7. Save the downloaded .sql file safely
+
+Method 2 - Using Command Line:
+1. Open Command Prompt
+2. Navigate to: cd C:\xampp\mysql\bin
+3. Run: mysqldump -u root school_db > backup.sql
+4. Find backup.sql in the bin folder
+
+RECOMMENDED BACKUP SCHEDULE:
+- Daily: Export database
+- Weekly: Copy entire schoolapp folder
+- Monthly: Full system backup
+
+B. RESTORE DATABASE
+-------------------
+
+Method 1 - Using phpMyAdmin:
+1. Go to: http://localhost/phpmyadmin
+2. Click on "school_db" (or create it if deleted)
+3. Click "Import" tab
+4. Choose your backup .sql file
+5. Click "Go"
+
+Method 2 - Using Command Line:
+1. Open Command Prompt
+2. Navigate to: cd C:\xampp\mysql\bin
+3. Run: mysql -u root school_db < backup.sql
+
+C. BACKUP FILES
+---------------
+1. Copy entire C:\xampp\htdocs\schoolapp\ folder
+2. Store in safe location
+3. Includes all uploaded files and configuration
+
+================================================================================
+                    14. SECURITY RECOMMENDATIONS
+================================================================================
+
+FOR PRODUCTION USE (Real School Environment):
+
+1. CHANGE DEFAULT PASSWORDS
+   - Change admin password immediately
+   - Use strong passwords (8+ characters, mixed case, numbers, symbols)
+   - Never share passwords
+
+2. SET MYSQL ROOT PASSWORD
+   - Open: http://localhost/phpmyadmin
+   - Go to: User accounts
+   - Click "Edit privileges" for root
+   - Click "Change password"
+   - Set a strong password
+   - Update config/db.php with new password
+
+3. RESTRICT ACCESS
+   - Configure Windows Firewall
+   - Don't expose to internet without proper security
+   - Use VPN for remote access
+
+4. REGULAR BACKUPS
+   - Daily database backups
+   - Weekly full backups
+   - Store backups in multiple locations
+
+5. KEEP SOFTWARE UPDATED
+   - Update XAMPP regularly
+   - Apply security patches
+
+6. SSL CERTIFICATE (Optional)
+   - Install SSL for HTTPS
+   - Encrypt data transmission
+
+================================================================================
+                   15. FREQUENTLY ASKED QUESTIONS
+================================================================================
+
+Q1: Can multiple users login at the same time?
+A: Yes! Each user gets their own session. Multiple admins, teachers, and 
+   students can use the system simultaneously.
+
+Q2: How do I add a new student?
+A: Login as Admin > Go to Students > Click "Add New Student" > Fill form > 
+   Submit. Roll number is automatically generated.
+
+Q3: How do I generate fee for all students?
+A: Go to Fee Management > "Generate Fees" tab > Select class, month, and 
+   due date > Click "Generate Fees for All Students"
+
+Q4: How do I print a fee receipt?
+A: Go to Payments > Find the payment > Click print icon > Receipt opens 
+   in new window > Use browser print (Ctrl+P)
+
+Q5: Can I use this on multiple computers?
+A: Yes! If computers are on the same network, other computers can access
+   using your computer's IP address: http://192.168.1.XXX/schoolapp
+   (Find your IP using 'ipconfig' in Command Prompt)
+
+Q6: How do I change school name and logo?
+A: Login as Admin > Go to Settings > Update school information > 
+   Upload logo > Click Save
+
+Q7: What if I forget admin password?
+A: Use phpMyAdmin:
+   1. Go to http://localhost/phpmyadmin
+   2. Select school_db > users table
+   3. Find admin user > Edit
+   4. In password field, enter new password
+   5. From dropdown, select "PASSWORD" function (or use PHP to generate hash)
+   6. Save
+
+   Or use this SQL:
+   UPDATE users SET password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi' WHERE username = 'admin';
+   (This sets password to 'password')
+
+Q8: How do I take attendance?
+A: Login as Admin or Teacher > Go to Attendance > Select Class > 
+   Select Date > Mark Present/Absent for each student > Save
+
+Q9: Can I export data to Excel?
+A: Yes! Most list pages have an "Export CSV" button. CSV files can be 
+   opened in Excel.
+
+Q10: How do I add subjects?
+A: Login as Admin > Go to Subjects > Add subject name, code, select class,
+    assign teacher > Save
+
+================================================================================
+                           QUICK REFERENCE
+================================================================================
+
+IMPORTANT URLs:
+- Home Page:      http://localhost/schoolapp
+- Login:          http://localhost/schoolapp/login.php
+- Dashboard:      http://localhost/schoolapp/dashboard.php
+- phpMyAdmin:     http://localhost/phpmyadmin
+- XAMPP Info:     http://localhost
+
+FILE LOCATIONS:
+- Project Files:  C:\xampp\htdocs\schoolapp\
+- PHP Config:     C:\xampp\php\php.ini
+- Apache Config:  C:\xampp\apache\conf\httpd.conf
+- MySQL Data:     C:\xampp\mysql\data\school_db\
+
+DEFAULT CREDENTIALS:
+- Admin:    admin / admin123
+- MySQL:    root / (no password)
+
+KEYBOARD SHORTCUTS:
+- Print Page:     Ctrl + P
+- Refresh:        F5 or Ctrl + R
+- Hard Refresh:   Ctrl + F5 (clears cache)
+- Open Console:   F12
+
+================================================================================
+                              SUPPORT
+================================================================================
+
+If you encounter issues not covered in this guide:
+
+1. Check the error message carefully
+2. Search the error message online
+3. Check XAMPP error logs:
+   - Apache: C:\xampp\apache\logs\error.log
+   - PHP: C:\xampp\php\logs\php_error_log
+4. Check application logs: C:\xampp\htdocs\schoolapp\logs\
+
+================================================================================
+                          END OF GUIDE
+================================================================================
+
+Thank you for using School Management System!
+
+Remember to:
+✓ Change default passwords
+✓ Take regular backups
+✓ Keep XAMPP updated
+✓ Configure school settings
+
+================================================================================

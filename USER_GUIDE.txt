@@ -1,0 +1,1095 @@
+================================================================================
+         SCHOOL MANAGEMENT SYSTEM - COMPLETE USER GUIDE
+================================================================================
+
+                         HOW TO USE THE SYSTEM
+                         Step-by-Step Instructions
+
+================================================================================
+                            TABLE OF CONTENTS
+================================================================================
+
+1. FIRST TIME SETUP (Do This First!)
+2. DASHBOARD OVERVIEW
+3. MANAGING STUDENTS
+4. MANAGING TEACHERS
+5. MANAGING CLASSES
+6. MANAGING SUBJECTS
+7. FEE MANAGEMENT
+8. COLLECTING PAYMENTS
+9. ATTENDANCE MANAGEMENT
+10. EXAM MANAGEMENT
+11. RESULT MANAGEMENT
+12. HOMEWORK MANAGEMENT
+13. PRINTING DOCUMENTS
+14. SCHOOL SETTINGS
+15. DAILY WORKFLOW (What to Do Every Day)
+16. MONTHLY TASKS
+17. YEARLY TASKS
+
+================================================================================
+                    1. FIRST TIME SETUP (Do This First!)
+================================================================================
+
+When you first install the system, do these steps IN ORDER:
+
+STEP 1: Login as Admin
+-----------------------
+1. Open: http://localhost/schoolapp/login.php
+2. Username: admin
+3. Password: admin123
+4. Click "Sign In"
+
+STEP 2: Update School Settings
+------------------------------
+1. Click "Settings" in left sidebar
+2. Fill in your school details:
+
+   SCHOOL INFO TAB:
+   - School Name: [Your School Name]
+   - Tagline: [Your School Motto]
+   - Established Year: [e.g., 1990]
+   - Principal Name: [Principal's Full Name]
+   
+   CONTACT TAB:
+   - Email: [school@email.com]
+   - Phone: [Phone Number]
+   - Mobile: [Mobile Number]
+   - Address: [Full Address]
+   - City: [City Name]
+   - State: [State Name]
+   - Pincode: [PIN Code]
+   
+   ACADEMIC TAB:
+   - Current Academic Year: 2024-2025
+   - Session Start Date: [First day of school]
+   - Session End Date: [Last day of school]
+   - Affiliation: [CBSE/ICSE/State Board]
+   
+3. Click "Save All Settings"
+
+STEP 3: Create Classes
+----------------------
+1. Click "Classes" in left sidebar
+2. Add all your classes:
+   
+   Example classes to add:
+   - Class 1, Section A, Capacity 40
+   - Class 1, Section B, Capacity 40
+   - Class 2, Section A, Capacity 40
+   - Class 3, Section A, Capacity 35
+   - Class 4, Section A, Capacity 35
+   - Class 5, Section A, Capacity 35
+   - Class 6, Section A, Capacity 30
+   - Class 7, Section A, Capacity 30
+   - Class 8, Section A, Capacity 30
+   - Class 9, Section A, Capacity 30
+   - Class 10, Section A, Capacity 30
+
+3. For each class, fill in:
+   - Class Name: Class 1
+   - Section: A
+   - Academic Year: 2024-2025
+   - Capacity: 40
+   - Click "Add Class"
+
+STEP 4: Create Subjects
+-----------------------
+1. Click "Subjects" in left sidebar
+2. Add subjects for each class:
+
+   For Primary Classes (1-5):
+   - English
+   - Hindi
+   - Mathematics
+   - Environmental Science (EVS)
+   - General Knowledge
+   - Computer Science
+   - Art & Craft
+   
+   For Middle Classes (6-8):
+   - English
+   - Hindi
+   - Mathematics
+   - Science
+   - Social Science
+   - Computer Science
+   - Sanskrit/Third Language
+   
+   For High School (9-10):
+   - English
+   - Hindi
+   - Mathematics
+   - Science
+   - Social Science
+
+3. For each subject, fill in:
+   - Subject Name: Mathematics
+   - Subject Code: MATH101
+   - Select Class: Class 1 - A
+   - Total Marks: 100
+   - Passing Marks: 33
+   - Click "Add Subject"
+
+STEP 5: Add Teachers
+--------------------
+1. Click "Teachers" in left sidebar
+2. Add all your teachers
+3. For each teacher:
+   - Full Name: [Teacher's Name]
+   - Username: [e.g., teacher_sharma]
+   - Email: [teacher@email.com]
+   - Password: [Set a password]
+   - Phone: [Phone number]
+   - Qualification: [e.g., M.Sc., B.Ed.]
+   - Specialization: [e.g., Mathematics]
+   - Joining Date: [Date they joined]
+   - Salary: [Monthly salary]
+   - Click "Add Teacher"
+
+STEP 6: Set Fee Structure
+-------------------------
+1. Click "Fee Management" in left sidebar
+2. Click "Create Individual Fee" tab
+3. First, you need students, so continue to Step 7
+
+STEP 7: Add Students
+--------------------
+Now you can start adding students (see Section 3 below)
+
+================================================================================
+                        2. DASHBOARD OVERVIEW
+================================================================================
+
+When you login, you see the DASHBOARD. Here's what each part shows:
+
+TOP SECTION:
+------------
+- Welcome message with your name
+- Current date and time
+- Quick action buttons
+
+STATISTICS CARDS:
+-----------------
++-------------------+-------------------+-------------------+-------------------+
+|  Total Students   |  Total Teachers   |  Active Classes   |  Pending Fees     |
+|       150         |        25         |        12         |        45         |
++-------------------+-------------------+-------------------+-------------------+
+
+- Total Students: How many students are enrolled
+- Total Teachers: How many teachers you have
+- Active Classes: Number of classes running
+- Pending Fees: Number of students with unpaid fees
+
+LEFT SIDEBAR MENU:
+------------------
+- Dashboard (Home page)
+- Students (Manage students)
+- Teachers (Manage teachers)
+- Classes (Manage classes)
+- Subjects (Manage subjects)
+- Fee Management (Create and track fees)
+- Payments (View all payments)
+- Attendance (Mark and view attendance)
+- Exams (Create exams)
+- Results (Enter marks)
+- Homework (Assign homework)
+- Settings (School configuration)
+- Logout (Exit the system)
+
+RECENT ACTIVITY SECTIONS:
+-------------------------
+- Recent Admissions: Last 5 students added
+- Recent Payments: Last 5 fee payments received
+- Announcements: Important notices
+- Quick Actions: Fast access buttons
+
+================================================================================
+                        3. MANAGING STUDENTS
+================================================================================
+
+A. HOW TO ADD A NEW STUDENT
+---------------------------
+
+1. Click "Students" in left sidebar
+2. You'll see "Add New Student" form at top
+3. Fill in the form:
+
+   ACCOUNT INFORMATION:
+   - Full Name: Rahul Kumar
+   - Username: rahul_kumar (for student login)
+   - Email: rahul@email.com
+   - Password: student123 (student will use this to login)
+   
+   ACADEMIC INFORMATION:
+   - Class: Select the class (e.g., Class 5 - A)
+   - Date of Birth: Select date
+   - Gender: Male/Female/Other
+   - Blood Group: A+, B+, O+, etc.
+   
+   PARENT INFORMATION:
+   - Father's Name: Mr. Kumar
+   - Mother's Name: Mrs. Kumar
+   - Guardian Phone: 9876543210
+   
+   OTHER INFORMATION:
+   - Phone: Student's phone (optional)
+   - Address: Full home address
+   - Previous School: Name of previous school
+
+4. Click "Add Student"
+
+5. IMPORTANT: The system will automatically generate:
+   - Roll Number (e.g., 2024050001)
+   - Admission Number (e.g., ADM20240001)
+   
+   Write these down or print the admission form!
+
+B. HOW TO VIEW ALL STUDENTS
+---------------------------
+
+1. Click "Students" in left sidebar
+2. Scroll down to see "All Students" table
+3. You can see:
+   - Roll Number
+   - Admission Number
+   - Name
+   - Class
+   - Gender
+   - Guardian Phone
+   - Status (Active/Inactive)
+
+C. HOW TO SEARCH FOR A STUDENT
+------------------------------
+
+1. Go to Students page
+2. In the search box, type:
+   - Student name, OR
+   - Roll number, OR
+   - Admission number
+3. Click the search button
+4. Matching students will appear
+
+D. HOW TO FILTER STUDENTS BY CLASS
+----------------------------------
+
+1. Go to Students page
+2. Use the "Class" dropdown
+3. Select a class (e.g., Class 5)
+4. Click search button
+5. Only students from that class will show
+
+E. HOW TO EDIT A STUDENT
+------------------------
+
+1. Find the student in the list
+2. Click the blue "Edit" button (pencil icon)
+3. The form will fill with student's current data
+4. Make your changes
+5. Click "Update Student"
+
+F. HOW TO DELETE A STUDENT
+--------------------------
+
+WARNING: This permanently deletes the student and all their data!
+
+1. Find the student in the list
+2. Click the red "Delete" button (trash icon)
+3. Confirm when asked "Are you sure?"
+4. Student will be deleted
+
+G. HOW TO PRINT ADMISSION FORM
+------------------------------
+
+1. Find the student in the list
+2. Click the green "Print" button (printer icon)
+3. Admission form opens in new window
+4. Click "Print Admission Form" button at top
+5. Print dialog appears
+6. Select your printer
+7. Click Print
+
+The admission form includes:
+- School header with logo
+- Student photo placeholder
+- All student information
+- Parent information
+- Previous school information
+- Declaration section
+- Signature lines
+
+================================================================================
+                        4. MANAGING TEACHERS
+================================================================================
+
+A. HOW TO ADD A NEW TEACHER
+---------------------------
+
+1. Click "Teachers" in left sidebar
+2. Fill in the "Add New Teacher" form:
+
+   ACCOUNT INFORMATION:
+   - Full Name: Mrs. Priya Sharma
+   - Username: priya_sharma
+   - Email: priya@school.com
+   - Password: teacher123
+   
+   PROFESSIONAL INFORMATION:
+   - Phone: 9876543210
+   - Qualification: M.A., B.Ed.
+   - Specialization: English
+   - Joining Date: 01-04-2024
+   - Salary: 35000
+   
+   ADDRESS:
+   - Full Address
+
+3. Click "Add Teacher"
+
+4. The system generates an Employee ID automatically
+   (e.g., EMP20240001)
+
+B. HOW TO ASSIGN A CLASS TEACHER
+--------------------------------
+
+1. Go to "Classes" in sidebar
+2. Find the class you want to assign
+3. Click "Edit" button
+4. Select teacher from "Class Teacher" dropdown
+5. Click "Update Class"
+
+C. HOW TO VIEW TEACHER DETAILS
+------------------------------
+
+1. Go to Teachers page
+2. All teachers are listed with:
+   - Employee ID
+   - Name
+   - Email
+   - Phone
+   - Specialization
+   - Qualification
+   - Status
+
+D. HOW TO EDIT A TEACHER
+------------------------
+
+1. Find teacher in the list
+2. Click blue "Edit" button
+3. Make changes
+4. Click "Update Teacher"
+
+E. HOW TO DELETE A TEACHER
+--------------------------
+
+1. Find teacher in the list
+2. Click red "Delete" button
+3. Confirm deletion
+4. Teacher account is removed
+
+================================================================================
+                        5. MANAGING CLASSES
+================================================================================
+
+A. HOW TO CREATE A NEW CLASS
+----------------------------
+
+1. Click "Classes" in left sidebar
+2. Fill in the form:
+   - Class Name: Class 6
+   - Section: A
+   - Academic Year: 2024-2025
+   - Class Teacher: Select from dropdown (optional)
+   - Capacity: 35
+   - Description: (optional)
+3. Click "Add Class"
+
+B. HOW TO VIEW CLASS DETAILS
+----------------------------
+
+Each class card shows:
+- Class name and section
+- Number of students enrolled
+- Maximum capacity
+- Assigned class teacher
+- Academic year
+
+C. HOW TO VIEW STUDENTS IN A CLASS
+----------------------------------
+
+1. Find the class card
+2. Click "Students" button
+3. You'll go to Students page filtered by that class
+
+D. HOW TO EDIT A CLASS
+----------------------
+
+1. Find the class card
+2. Click blue "Edit" button
+3. Make changes
+4. Click "Update Class"
+
+E. HOW TO DELETE A CLASS
+------------------------
+
+WARNING: Make sure no students are in this class first!
+
+1. Find the class card
+2. Click red "Delete" button
+3. Confirm deletion
+
+================================================================================
+                        6. MANAGING SUBJECTS
+================================================================================
+
+A. HOW TO ADD A NEW SUBJECT
+---------------------------
+
+1. Click "Subjects" in left sidebar
+2. Fill in the form:
+   - Subject Name: Mathematics
+   - Subject Code: MATH601 (unique code)
+   - Class: Select class (e.g., Class 6 - A)
+   - Teacher: Select teacher (optional)
+   - Subject Type: Theory / Practical / Both
+   - Total Marks: 100
+   - Passing Marks: 33
+3. Click "Add Subject"
+
+B. HOW TO ASSIGN TEACHER TO SUBJECT
+-----------------------------------
+
+1. Go to Subjects page
+2. Find the subject
+3. Click "Edit"
+4. Select teacher from dropdown
+5. Click "Update Subject"
+
+================================================================================
+                        7. FEE MANAGEMENT
+================================================================================
+
+A. UNDERSTANDING FEE STRUCTURE
+------------------------------
+
+The system supports:
+- Monthly fees (Tuition)
+- One-time fees (Admission)
+- Quarterly fees
+- Annual fees
+- Transport fees
+- Other fees
+
+B. HOW TO GENERATE MONTHLY FEES FOR A CLASS
+-------------------------------------------
+
+This creates fee records for ALL students in a class at once.
+
+1. Click "Fee Management" in sidebar
+2. Click "Generate Fees" tab
+3. Fill in:
+   - Class: Select class (e.g., Class 5 - A)
+   - Month: January 2025
+   - Academic Year: 2024-2025
+   - Due Date: 10-01-2025 (when fee should be paid)
+4. Click "Generate Fees for All Students"
+5. System creates fee record for each student
+
+C. HOW TO CREATE INDIVIDUAL FEE
+-------------------------------
+
+For one student only:
+
+1. Click "Fee Management" in sidebar
+2. Click "Create Individual Fee" tab
+3. Fill in:
+   - Student: Search and select student
+   - Fee Type: Select type (or custom)
+   - Amount: Enter amount
+   - Month: January 2025
+   - Academic Year: 2024-2025
+   - Due Date: Select date
+4. Click "Create Fee Record"
+
+D. HOW TO VIEW FEE STATUS
+-------------------------
+
+1. Go to Fee Management
+2. You'll see a table with all fees:
+   - Student name
+   - Class
+   - Month
+   - Amount
+   - Due Date
+   - Status (Paid/Unpaid/Partial)
+
+E. HOW TO FILTER FEES
+---------------------
+
+Use the filters at top:
+- Status: All / Paid / Unpaid / Partial
+- Class: Filter by class
+- Click "Filter" to apply
+
+F. UNDERSTANDING FEE STATUS
+---------------------------
+
+- UNPAID (Red): No payment received
+- PARTIAL (Yellow): Some amount paid, balance remaining
+- PAID (Green): Full amount received
+
+================================================================================
+                        8. COLLECTING PAYMENTS
+================================================================================
+
+A. HOW TO COLLECT FEE PAYMENT
+-----------------------------
+
+METHOD 1 - From Fee Management Page:
+
+1. Go to "Fee Management"
+2. Find the student's fee record
+3. Click green "Collect" button
+4. Enter payment details:
+   - Amount to Pay: Enter amount
+   - Payment Date: Today's date
+   - Payment Method: Cash/Card/Bank Transfer/UPI
+   - Transaction ID: (for digital payments)
+   - Remarks: Any notes
+5. Click "Collect Payment"
+6. Receipt number is generated automatically
+
+METHOD 2 - From Collect Payment Tab:
+
+1. Go to "Fee Management"
+2. Click "Collect Payment" tab
+3. Select student with pending fee from dropdown
+4. Fill in payment details
+5. Click "Collect Payment"
+
+B. HOW TO PRINT FEE RECEIPT
+---------------------------
+
+After collecting payment:
+
+1. Go to "Payments" in sidebar
+2. Find the payment record
+3. Click the print icon
+4. Receipt opens in new window
+5. Click "Print Receipt"
+6. Print on A4 paper
+
+The receipt includes:
+- School header
+- Receipt number
+- Student details
+- Payment details
+- Amount in words
+- Signature lines
+- "PAID" stamp
+
+C. HOW TO PRINT FEE SLIP (CHALLAN)
+----------------------------------
+
+To give student a fee slip before payment:
+
+1. Go to "Fee Management"
+2. Find the fee record
+3. Click the print icon
+4. Fee slip opens showing:
+   - Student details
+   - Fee amount
+   - Due date
+   - Payment instructions
+
+D. HOW TO VIEW PAYMENT HISTORY
+------------------------------
+
+1. Click "Payments" in sidebar
+2. See all payments with:
+   - Receipt number
+   - Date
+   - Student name
+   - Amount
+   - Payment method
+   - Who received it
+
+E. HOW TO FILTER PAYMENTS
+-------------------------
+
+Use filters:
+- Search by name/receipt number
+- Filter by date range
+- Click "Filter"
+
+F. HOW TO EXPORT PAYMENTS
+-------------------------
+
+1. Go to Payments page
+2. Apply any filters needed
+3. Click "Export CSV" button
+4. Opens in Excel
+
+================================================================================
+                        9. ATTENDANCE MANAGEMENT
+================================================================================
+
+A. HOW TO MARK DAILY ATTENDANCE
+-------------------------------
+
+1. Click "Attendance" in sidebar
+2. Select:
+   - Class: Choose class
+   - Date: Select date (default is today)
+3. Click "Load Students"
+4. Student list appears with attendance options
+5. For each student, select:
+   - Present (Green)
+   - Absent (Red)
+   - Late (Yellow)
+   - Leave (Blue)
+6. Click "Save Attendance"
+
+B. QUICK MARKING OPTIONS
+------------------------
+
+- "Mark All Present": Sets everyone as present
+- "Mark All Absent": Sets everyone as absent
+  
+Use these for quick marking, then adjust individuals.
+
+C. HOW TO VIEW ATTENDANCE SUMMARY
+---------------------------------
+
+After loading a class:
+- See count of Present/Absent/Late/Leave
+- Color-coded statistics
+
+D. HOW TO EDIT ATTENDANCE
+-------------------------
+
+1. Go to Attendance page
+2. Select same class and date
+3. Previous attendance loads
+4. Make changes
+5. Click "Save Attendance"
+
+E. HOW TO VIEW STUDENT'S ATTENDANCE HISTORY
+-------------------------------------------
+
+1. Go to student's profile
+2. Or use reports section
+3. See monthly/yearly attendance percentage
+
+================================================================================
+                        10. EXAM MANAGEMENT
+================================================================================
+
+A. HOW TO CREATE AN EXAM
+------------------------
+
+1. Click "Exams" in sidebar
+2. Fill in exam details:
+   - Exam Name: First Term Examination
+   - Exam Type: Unit Test / Midterm / Final / Annual
+   - Class: Select class
+   - Start Date: When exam starts
+   - End Date: When exam ends
+   - Total Marks: 100
+   - Passing Percentage: 33%
+3. Click "Create Exam"
+
+B. EXAM TYPES EXPLAINED
+-----------------------
+
+- Unit Test: Small chapter tests
+- Quarterly: Every 3 months
+- Half Yearly: Mid-year exam
+- Annual: Final year exam
+- Practical: Lab exams
+
+C. HOW TO VIEW EXAMS
+--------------------
+
+1. Go to Exams page
+2. See all exams with:
+   - Exam name
+   - Class
+   - Dates
+   - Status (Upcoming/Ongoing/Completed)
+
+D. HOW TO EDIT AN EXAM
+----------------------
+
+1. Find the exam
+2. Click "Edit"
+3. Make changes
+4. Click "Update Exam"
+
+================================================================================
+                        11. RESULT MANAGEMENT
+================================================================================
+
+A. HOW TO ENTER MARKS
+---------------------
+
+1. Click "Results" in sidebar
+2. Select:
+   - Exam: Choose exam
+   - Class: Choose class
+   - Subject: Choose subject
+3. Click "Load Students"
+4. Student list appears with mark entry fields
+5. Enter marks for each student:
+   - Theory Marks
+   - Practical Marks (if applicable)
+   - Check "Absent" if student was absent
+6. Click "Save Marks"
+
+B. AUTOMATIC GRADE CALCULATION
+------------------------------
+
+The system automatically calculates:
+- Total marks
+- Percentage
+- Grade (A+, A, B+, B, C, D, F)
+- Pass/Fail status
+
+Grade scale:
+- 90-100%: A+ (Outstanding)
+- 80-89%: A (Excellent)
+- 70-79%: B+ (Very Good)
+- 60-69%: B (Good)
+- 50-59%: C+ (Above Average)
+- 40-49%: C (Average)
+- 33-39%: D (Below Average)
+- Below 33%: F (Fail)
+
+C. HOW TO PRINT RESULT CARD
+---------------------------
+
+1. After entering all subject marks
+2. Find student in results
+3. Click "Print Report Card"
+4. Report card shows:
+   - Student details
+   - All subject marks
+   - Total and percentage
+   - Grade
+   - Remarks
+   - Signature lines
+
+D. HOW TO VIEW CLASS RESULTS
+----------------------------
+
+1. Go to Results page
+2. Select exam and class
+3. See all students' performance
+4. Export to Excel if needed
+
+================================================================================
+                        12. HOMEWORK MANAGEMENT
+================================================================================
+
+A. HOW TO ASSIGN HOMEWORK
+-------------------------
+
+1. Click "Homework" in sidebar
+2. Fill in:
+   - Class: Select class
+   - Subject: Select subject
+   - Title: Homework title
+   - Description: Full instructions
+   - Due Date: When to submit
+   - Max Marks: Points for this homework
+3. Click "Assign Homework"
+
+B. HOW TO VIEW HOMEWORK LIST
+----------------------------
+
+1. Go to Homework page
+2. See all homework with:
+   - Title
+   - Class
+   - Subject
+   - Due date
+   - Status (Active/Expired)
+
+C. HOW TO VIEW SUBMISSIONS
+--------------------------
+
+1. Find homework in list
+2. Click "View Submissions"
+3. See which students submitted
+4. Grade submissions
+
+================================================================================
+                        13. PRINTING DOCUMENTS
+================================================================================
+
+The system can print these documents on A4 paper:
+
+A. ADMISSION FORM
+-----------------
+- Contains all student information
+- Parent/guardian details
+- Previous school info
+- Declaration section
+- Signature lines
+
+How to print:
+1. Students → Find student → Click Print button
+
+B. FEE SLIP / CHALLAN
+---------------------
+- Student details
+- Fee breakdown
+- Amount due
+- Due date
+- Payment instructions
+
+How to print:
+1. Fee Management → Find fee → Click Print button
+
+C. PAYMENT RECEIPT
+------------------
+- Receipt number
+- Payment details
+- "PAID" stamp
+- Amount in words
+- Official signatures
+
+How to print:
+1. Payments → Find payment → Click Print button
+
+D. RESULT CARD / REPORT CARD
+----------------------------
+- Student information
+- Subject-wise marks
+- Total and percentage
+- Grade and remarks
+- Principal signature
+
+How to print:
+1. Results → Find student → Click Print Report Card
+
+E. ATTENDANCE REPORT
+--------------------
+- Monthly attendance summary
+- Present/Absent count
+- Attendance percentage
+
+How to print:
+1. Attendance → Generate report → Print
+
+================================================================================
+                        14. SCHOOL SETTINGS
+================================================================================
+
+Access: Sidebar → Settings
+
+A. SCHOOL INFO TAB
+------------------
+- School Name: Your school's full name
+- Tagline: Motto or slogan
+- Established: Year founded
+- Principal Name: Current principal
+
+B. CONTACT TAB
+--------------
+- Email: School email address
+- Phone: Landline number
+- Mobile: Mobile number
+- Address: Full postal address
+- City, State, Pincode, Country
+
+C. ACADEMIC TAB
+---------------
+- Current Academic Year: e.g., 2024-2025
+- Session Start Date: First day
+- Session End Date: Last day
+- Admission Status: Open/Closed
+- Grading System: Percentage/Grade/CGPA
+- Passing Percentage: Minimum to pass
+
+D. FINANCE TAB
+--------------
+- Currency Symbol: ₹
+- Currency Code: INR
+- Fee Due Day: Day of month fee is due
+- Late Fee Per Day: Fine for late payment
+
+E. ATTENDANCE TAB
+-----------------
+- School Start Time: e.g., 8:00 AM
+- School End Time: e.g., 2:00 PM
+- Late Arrival After: e.g., 8:30 AM
+
+F. EMAIL TAB
+------------
+- Email Notifications: Enable/Disable
+- SMTP Settings: For sending emails
+
+G. MEDIA TAB
+------------
+- School Logo: Upload your logo
+- Principal Signature: For documents
+- School Stamp: Official stamp image
+
+================================================================================
+                    15. DAILY WORKFLOW (What to Do Every Day)
+================================================================================
+
+MORNING TASKS:
+--------------
+□ Login to system
+□ Check dashboard for any alerts
+□ Mark today's attendance for all classes
+
+DURING THE DAY:
+---------------
+□ Collect any fee payments
+□ Print receipts for payments
+□ Handle new admissions
+□ Update any student information
+
+END OF DAY:
+-----------
+□ Verify all attendance is marked
+□ Check pending fee list
+□ Logout from system
+
+================================================================================
+                        16. MONTHLY TASKS
+================================================================================
+
+BEGINNING OF MONTH:
+-------------------
+□ Generate monthly fees for all classes
+□ Send fee reminders to pending parents
+□ Review previous month's collection
+
+DURING THE MONTH:
+-----------------
+□ Collect fee payments daily
+□ Track defaulters
+□ Prepare attendance reports
+
+END OF MONTH:
+-------------
+□ Generate fee collection report
+□ Identify students with unpaid fees
+□ Generate attendance reports
+□ Backup database
+
+================================================================================
+                        17. YEARLY TASKS
+================================================================================
+
+START OF ACADEMIC YEAR:
+-----------------------
+□ Update Academic Year in Settings
+□ Create new classes for new year
+□ Promote students to next class (manually)
+□ Add new admissions
+□ Update fee structure
+□ Assign class teachers
+
+DURING EXAMS:
+-------------
+□ Create exam in system
+□ Enter marks after each exam
+□ Generate report cards
+□ Print and distribute
+
+END OF ACADEMIC YEAR:
+---------------------
+□ Complete all result entry
+□ Print final report cards
+□ Generate yearly reports
+□ Take full database backup
+□ Archive old data
+
+================================================================================
+                        KEYBOARD SHORTCUTS
+================================================================================
+
+Ctrl + P     : Print current page
+Ctrl + F     : Find/Search on page
+Ctrl + S     : Save (in forms)
+F5           : Refresh page
+Ctrl + F5    : Hard refresh (clear cache)
+Escape       : Close popup/modal
+
+================================================================================
+                        TIPS FOR BETTER USE
+================================================================================
+
+1. ALWAYS BACKUP: Take regular database backups
+
+2. USE STRONG PASSWORDS: Change default passwords
+
+3. LOGOUT WHEN DONE: Don't leave system open
+
+4. PRINT RECEIPTS: Always give receipts for payments
+
+5. MARK ATTENDANCE DAILY: Don't skip days
+
+6. ENTER MARKS PROMPTLY: After each exam
+
+7. KEEP INFORMATION UPDATED: Student phone numbers, addresses
+
+8. CHECK PENDING FEES WEEKLY: Follow up on defaulters
+
+9. USE FILTERS: Makes finding information easier
+
+10. TRAIN STAFF: Make sure all users know how to use system
+
+================================================================================
+                        TROUBLESHOOTING
+================================================================================
+
+PROBLEM: Page not loading
+SOLUTION: Check if XAMPP Apache and MySQL are running
+
+PROBLEM: Can't login
+SOLUTION: Use reset_password.php to reset password
+
+PROBLEM: Data not saving
+SOLUTION: Check all required fields are filled
+
+PROBLEM: Print not working
+SOLUTION: Check printer connection, try different browser
+
+PROBLEM: Slow performance
+SOLUTION: Clear browser cache, restart XAMPP
+
+================================================================================
+                           GETTING HELP
+================================================================================
+
+If you have issues:
+
+1. Check this guide first
+2. Check INSTALLATION_GUIDE.txt
+3. Look at error messages carefully
+4. Make sure XAMPP is running
+5. Try refreshing the page
+6. Try a different browser
+
+================================================================================
+                    CONGRATULATIONS!
+================================================================================
+
+You now know how to use the School Management System!
+
+Remember:
+✓ Take regular backups
+✓ Keep passwords secure
+✓ Update information regularly
+✓ Print receipts for all payments
+✓ Mark attendance daily
+
+================================================================================
+                         END OF USER GUIDE
+================================================================================
